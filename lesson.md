@@ -49,40 +49,16 @@ By the end of this session, learners will be able to:
 * **DATE:** Chronological points. (Don't store dates as text\!)
 
 ---
-<details>
-  <summary>Introduction to DuckDB: Why we use an in-process engine for data science.</summary>
-  
-### DuckDB is an in-process, analytical database management system (DBMS) specifically designed to address the needs of data scientists by bringing the database closer to the data itself. This approach is favored in data science for several key reasons: 
-#### Why an In-Process Engine is Beneficial for Data Science
-  * Zero-Copy Data Transfer: Data science often involves rapidly iterating on large datasets. DuckDB runs within the same process as the application (e.g., a Python script or R session), eliminating the overhead of inter-process communication or network transfers. This "zero-copy" data transfer drastically improves performance and efficiency when working with local data.
-  * Ease of Deployment and No Server Management: As an in-process system, DuckDB does not require a separate server to be installed, configured, or managed. This simplifies the setup, making it an excellent tool for local analysis, laptop use, and environments where users lack administrative privileges or the need for a dedicated data warehouse team.
-  * High Performance for Analytical Workloads: DuckDB is optimized for Online Analytical Processing (OLAP) queries, which are common in data science. It employs columnar storage and advanced query optimization techniques, enabling it to efficiently handle the large, complex, and often ad-hoc queries characteristic of data analysis.
-  * Seamless Integration with Data Science Ecosystems: DuckDB offers robust and native integrations with popular data science tools and languages, such as Python (via the duckdb library), R, and Java. It can directly query data frames in memory and read from various file formats (like CSV, Parquet, and JSON), streamlining data ingestion and manipulation within existing workflows.
-  * Portability and Reproducibility: Because the database runs within the application and the data can be stored in a single file, analyses conducted with DuckDB are highly portable. This simplifies sharing reproducible research and results, as the entire environment and data can be easily packaged and moved. 
-  * In summary, DuckDB's design as an in-process, analytical database provides data scientists with a fast, easy-to-use, and highly integrated tool that removes common bottlenecks associated with traditional client-server database architectures. Users can learn more about its features and get started with the official DuckDB documentation and explore its capabilities. 
 
-</details>
+We will be using two modern, lightweight tools:
 
-<details>
-  <summary>Introduction to DbGate: A cross-platform database manager.</summary>
-  
-### DbGate is a free, cross-platform database manager and data editor for SQL and NoSQL databases (MySQL, PostgreSQL, MongoDB, etc.), available as a desktop app (Win/Mac/Linux) or a web app, offering features like data browsing/editing (Excel-like), visual query design, schema comparison, data visualization, and AI-powered SQL chat for simplified database management. It's designed for ease of use, allowing quick data interaction in the browser or desktop with powerful tools for developers and DBAs. 
-#### Key Features
-  * Unified Interface: Manage various databases (SQL, NoSQL) from one tool.
-  * Data Editing: Edit data directly in tables with Excel-like features (copy/paste, sorting, filtering).
-  * Querying: Includes a query console with auto-completion, visual query designer, and AI chat for generating SQL.
-  * Data Visualization: Create charts and ER diagrams from your data.
-  * Import/Export: Supports multiple formats (CSV, JSON, XML, Excel, etc.).
-  * Cross-Platform: Works on Windows, macOS, Linux, and in a web browser.
-  * Open Source: Free under GPL-3.0 license for most uses, with premium options available. 
-#### How it Works
-  * Desktop App: A native application for your computer.
-  * Web App: Can run in a browser (via Docker or NPM) or be self-hosted as an ASP.NET Core application for browser access. 
-</details>
+1. **DuckDB:** A fast, "in-process" database engine. Unlike traditional databases (like MySQL), DuckDB doesn't require a complex server setup. It stores everything in a single file on your computer, making it perfect for data science.  
+2. **DbGate:** A user-friendly database manager. It provides a visual interface to see your tables, run queries, and manage your data.
+
 
 
 ---
-* **Demo & Hands-on Workshop:**
+#### **🟢 Activity 1: The "Profile" Table (Code-Along) (20 Mins)**
    
 1. **Connecting to the Database:**
   
