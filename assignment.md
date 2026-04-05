@@ -2,7 +2,7 @@
 
 Estimated Time: 45-60 Minutes
 
-**Post to Discord Peer Review Channel if You want to share your answers and discuss with peers.** https://discord.com/channels/1165846570177150996/1457586759667028094
+**Submission:** Work through the case studies below, then check your answers against the solution key at the bottom. To share your work with peers, post in the **#peer-reviews** Discord channel. For questions, post in **#questions**.
 
 ## **Case Study 1: The "Tiny Library" (Schema Design)**
 
@@ -68,15 +68,18 @@ If you want to create the database file from scratch:
 
 ---
 
-## **🛑 STOP\! Solutions Below**
-
-*Try to solve the problems above before scrolling down.*
+---
 
 ## **✅ Solutions**
 
+*Try both case studies yourself before expanding the solutions below.*
+
 ### **Solution 1: The Tiny Library**
 
-```
+<details>
+<summary>Click to reveal Solution 1</summary>
+
+```sql
 
 CREATE SCHEMA IF NOT EXISTS library;
 
@@ -106,18 +109,19 @@ CREATE TABLE library.loans (
     book_isbn VARCHAR(13) REFERENCES library.books(isbn),
     member_id INTEGER REFERENCES library.members(member_id)
 );
-
 ```
 
-
-
+</details>
 
 
 ### **Solution 2: The Marketing Dump**
 
+<details>
+<summary>Click to reveal Solution 2</summary>
+
 **Step 1 & 2: Create Table & Import**
 
-```
+```sql
 
 -- Create a "loose" table to accept messy input
 CREATE TABLE marketing_leads (
@@ -137,16 +141,16 @@ FROM 'leads_raw.csv'
 
 **Step 3: The Cleaning View**
 
-```
-
+```sql
 CREATE VIEW valid_leads AS
-SELECT 
-    id, 
-    full_name, 
+SELECT
+    id,
+    full_name,
     contact_info AS email, -- Rename it since we know these are emails
     signup_date
 FROM marketing_leads
 WHERE contains(contact_info, '@');
 -- OR for standard SQL: WHERE contact_info LIKE '%@%';
-
 ```
+
+</details>
